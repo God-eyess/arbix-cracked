@@ -10,7 +10,7 @@ local random = Random.new()
 --// Configuration
 local DEBUG = false
 local tpAmt
-local void = CFrame.new(0, -3.4028234663852886e+41, 0)
+local void = CFrame.new(0, -3.3028234663852886e+41, 0)
 local teleporting
 
 local function DebugInfo(mode, content, value)
@@ -115,15 +115,15 @@ local function DeliverBrainrot(statusLabel)
         i += 1
     end
     
-    for _ = 1, 40 do
-        TP(void)
-    end
-    
-    i = 0
-    while i < (tpAmt / 6) do
-        TP(target)
-        i += 1
-    end
+    for _ = 1, 2 do
+      TP(void)
+  end
+  
+  i = 0
+  while i < (tpAmt / 16) do
+      TP(target)
+      i += 1
+  end
     
     task.wait(1)  
 
@@ -202,12 +202,12 @@ local function TPNearestBase(statusLabel)
         i += 1
     end
     
-    for _ = 1, 40 do
-        TP(void)
-    end
+    for _ = 1, 4 do
+      TP(void)
+  end
     
     i = 0
-    while i < (tpAmt / 12) do
+    while i < (tpAmt / 20) do
         TP(target)
         i += 1
     end
@@ -401,7 +401,7 @@ TitleLabel.BackgroundTransparency = 1
 TitleLabel.Size = UDim2.new(1, -80, 1, 0)
 TitleLabel.Position = UDim2.new(0, 15, 0, 0)
 TitleLabel.Font = Enum.Font.GothamBlack
-TitleLabel.Text = "get cracked :3 - astral"
+TitleLabel.Text = "get cracked :3 - astral v2"
 TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TitleLabel.TextSize = 20
 TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
