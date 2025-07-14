@@ -10,7 +10,7 @@ local random = Random.new()
 --// Configuration
 local DEBUG = false
 local tpAmt
-local void = CFrame.new(0, -3.4028234663852886e+38, 0)
+local void = CFrame.new(0, -3.4028234663852886e+41, 0)
 local teleporting
 
 local function DebugInfo(mode, content, value)
@@ -50,7 +50,7 @@ end)
 task.spawn(function()
     while true do
         local ping = player:GetNetworkPing() * 1000
-        tpAmt = math.clamp(math.floor(ping * 0.8), 10, 150)
+        tpAmt = math.clamp(math.floor(ping * 0.4), 10, 5)
         if DEBUG then
             DebugInfo("print", "Ping: " .. math.floor(ping) .. "ms | tpAmt:", tpAmt)
         end
@@ -63,9 +63,9 @@ local function TP(position)
         teleporting = true
         if typeof(position) == "CFrame" then
             hrp.CFrame = position + Vector3.new(
-                random:NextNumber(-0.0001, 0.0001),
-                random:NextNumber(-0.0001, 0.0001),
-                random:NextNumber(-0.0001, 0.0001)
+                random:NextNumber(-0.001, 0.001),
+                random:NextNumber(-0.001, 0.001),
+                random:NextNumber(-0.001, 0.001)
             )
             RunService.Heartbeat:Wait()
             teleporting = false
@@ -115,12 +115,12 @@ local function DeliverBrainrot(statusLabel)
         i += 1
     end
     
-    for _ = 1, 6 do
+    for _ = 1, 40 do
         TP(void)
     end
     
     i = 0
-    while i < (tpAmt / 14) do
+    while i < (tpAmt / 6) do
         TP(target)
         i += 1
     end
@@ -197,17 +197,17 @@ local function TPNearestBase(statusLabel)
     local target = closestBrainrot.CFrame * CFrame.new(0, 2, 0)
     
     local i = 0
-    while i < (tpAmt or 70) do
+    while i < (tpAmt or 50) do
         TP(target)
         i += 1
     end
     
-    for _ = 1, 2 do
+    for _ = 1, 40 do
         TP(void)
     end
     
     i = 0
-    while i < (tpAmt / 16) do
+    while i < (tpAmt / 12) do
         TP(target)
         i += 1
     end
