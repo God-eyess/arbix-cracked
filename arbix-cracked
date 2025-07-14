@@ -115,12 +115,12 @@ local function DeliverBrainrot(statusLabel)
         i += 1
     end
     
-    for _ = 1, 2 do
+    for _ = 1, 6 do
         TP(void)
     end
     
     i = 0
-    while i < (tpAmt / 16) do
+    while i < (tpAmt / 14) do
         TP(target)
         i += 1
     end
