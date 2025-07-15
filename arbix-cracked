@@ -639,7 +639,6 @@ ESPButton.MouseButton1Click:Connect(function()
 			['La Vacca Saturno Saturnita'] = true,
 			['Graipuss Medussi'] = true,
 			['Matteo'] = true,
-                        ['Las Tralaleritas'] = true,
 		},
 	}
 
